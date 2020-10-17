@@ -1,0 +1,39 @@
+<div class="container p-4">
+    <h1 class="text-center mb-3">slinky.cf</h1>
+    <h4 class="text-center mb-3" style="font-weight: normal;">Link Shortener</h4>
+</div>
+
+<div class="container p-2">
+    <%if (locals.message) { %>
+        <div class="alert alert-<%= message.type %>" role="alert">
+            <%- message.content %>
+        </div>
+    <%}%>
+    <form action="/api" method="POST">
+        <div class="form-group">
+            <label for="ending">Custom Link Ending</label>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">slinky.cf/</span>
+                </div>
+                <input type="text" class="form-control" name="ending" id="endingInput" required="true">
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-info" id="randomEndingButton">Random</button>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="url">Link URL</label>
+            <input type="url" class="form-control form-control-sm" name="url" required="true">
+        </div>
+        <input type="submit" value="Shorten Link" class="btn btn-primary btn-block">
+    </form>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $("#randomEndingButton").click(function() {
+            $("#endingInput").val("<%= randomEnding %>");
+        });
+    });
+</script>

@@ -1,0 +1,5 @@
+{
+    "link_created": { "content": "<b>slinky.cf/{ending}</b> has been linked to <i>{url}</i>", "type": "primary" },
+    "link_already_exists": { "content": "<b>slinky.cf/{ending}</b> exists and is already linked to <i>{url}</i>", "type": "primary" },
+    "ending_taken": { "content": "<b>slinky.cf/{ending}</b> is taken!", "type": "danger" }
+}
