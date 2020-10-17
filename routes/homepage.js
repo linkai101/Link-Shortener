@@ -4,7 +4,7 @@ const shortid = require('shortid');
 const messages = require('../messages')
 
 router.get('/', (req, res) => {
-    res.render('index', { randomEnding: shortid.generate(), message: getMessage(req.query) })
+    res.render('index', { domain: process.env.DOMAIN, randomEnding: shortid.generate(), message: getMessage(req.query) })
 });
 
 module.exports = router;
